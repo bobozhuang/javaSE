@@ -1,4 +1,4 @@
-package main.java.com.bobozhuang.main;
+package main;
 
 public class Main {
 
