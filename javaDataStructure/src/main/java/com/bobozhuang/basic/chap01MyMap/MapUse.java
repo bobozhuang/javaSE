@@ -4,7 +4,7 @@ package main.java.com.bobozhuang.basic.chap01MyMap;
 import java.util.*;
 import java.util.HashMap;
 
-public class MyMap {
+public class MapUse {
 
     public static void main(String[] args) {
         HashMap<String, String> hashMap = new HashMap<>();
@@ -42,7 +42,7 @@ public class MyMap {
         hashMap.put("23","二三");
         hashMap.put("24","二四");
 
-
+        traverseA(hashMap);
 
 
     }
@@ -55,6 +55,11 @@ public class MyMap {
             System.out.println(key + "\t" + value);
         }
     }
+
+    /**
+     *
+     * @param hashMap
+     */
     public static void traverseB(HashMap hashMap){
         Set entries = hashMap.entrySet();
         Iterator iterator = entries.iterator();
