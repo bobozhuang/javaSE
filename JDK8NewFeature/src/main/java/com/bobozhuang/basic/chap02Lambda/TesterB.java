@@ -14,7 +14,7 @@ public class TesterB {
         Converter<Integer, String> s = (param) -> System.out.println(String.valueOf(param + num));
         s.convert(2);  // 输出结果为 3
     }
-
+    //convert   使转变；转换
     public interface Converter<T1, T2> {
         void convert(int i);
     }

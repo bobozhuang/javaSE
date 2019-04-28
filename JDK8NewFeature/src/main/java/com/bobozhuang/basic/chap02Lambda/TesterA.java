@@ -9,13 +9,13 @@ package main.java.com.bobozhuang.basic.chap02Lambda;
  * @Package main.java.com.bobozhuang.basic.chap02Lambda
  * @Copyright: 2019 www.bobozhuang.com Inc. All rights reserved. 注意：本内容仅限于Hubery内部传阅，禁止外泄以及用于其他的商业目的
  */
-public class Tester {
+public class TesterA {
     final static String salutation = "Hello! ";
 
     public static void main(String args[]){
         GreetingService greetService1 = message ->
                 System.out.println(salutation + message);
-        greetService1.sayMessage("Runoob");
+        greetService1.sayMessage("Hubery");
     }
 
     interface GreetingService {

@@ -15,14 +15,14 @@ public class TesterC {
 
     public static void main(String[] args) {
         int num = 1;
-        TesterB.Converter<Integer, String> s = (param) -> System.out.println(String.valueOf(param + num));
-        s.convert(2);
+       // TesterB.Converter<Integer, String> s = (param) -> System.out.println(String.valueOf(param + num));
+       // s.convert(2);
         num = 5;
         //报错信息：Local variable num defined in an enclosing scope must be final or effectively
 //        final
 
         String first = "";
-        Comparator<String> comparator = (first, second) -> Integer.compare(first.length(), second.length());  //编译会出错
+        //Comparator<String> comparator = (first, second) -> Integer.compare(first.length(), second.length());  //编译会出错
     }
 
 }
