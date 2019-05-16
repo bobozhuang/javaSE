@@ -17,15 +17,30 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     private int size;
     //HashMap的默认长度
     private static int defaultLength = 16;
-    //定义加载因子
+    //定义加载因子 默认值 0.75  加载因子：当entry数组中有下标大于 16*0.75=12 就进行扩容
+    private static double defaultLoad = 0.75;
 
     @Override
     public V put(K k, V v) {
         if (null == table) {
             table = new Entry[this.defaultLength];
         }
+        //扩容
+        if (size >= defaultLength * defaultLoad) {
+            reSize();
+        }
         //  1、确定table中下标
         int index = getIndex(k, this.defaultLength);
+        System.out.println("index:" + index);
+        //put 时如果key已经存在，就去更行value，所以判断是不是修改
+        MyMap.Entry<K, V> kvEntry = table[index];
+        while (null != kvEntry) {
+            if (k.equals(kvEntry.getKey())) {//euqals比较，如果相同就将原来的value覆盖
+                return kvEntry.setValue(v);
+            } else {//继续遍历链表的下一个节点
+                kvEntry = kvEntry.getNext();
+            }
+        }
         //  2、创建Entry元素存放在table中
         table[index] = new Entry<>(k, v, table[index]);
         this.size++;
@@ -38,6 +53,28 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         }
         int index = k.hashCode();
         return index & (length - 1);
+    }
+
+    //重新散列
+    private void reSize() {
+        if (size >= defaultLength * defaultLoad) {
+            System.out.println("Begain resize !");
+            Entry<K, V> newTable[] = new Entry[this.defaultLength << 1];
+            MyMap.Entry<K, V> entry = null;
+            for (int i = 0; i < table.length; i++) {//将原来数组中的entry遍历出来，放入扩容后的数组
+                entry = table[i];
+                while (null != entry) {
+                    int index = getIndex(entry.getKey(), newTable.length);
+                    MyMap.Entry<K, V> oldEntry = entry.getNext();//数组位置可能有多个元素
+                    entry.setNext(newTable[index]);
+                    newTable[index] = (Entry<K, V>) entry;
+                    entry = oldEntry;
+                }
+            }
+            table= newTable;
+            this.defaultLength = newTable.length;
+            newTable = null;
+        }
     }
 
     @Override

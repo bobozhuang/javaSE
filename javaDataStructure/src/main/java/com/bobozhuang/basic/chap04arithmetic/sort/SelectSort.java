@@ -29,9 +29,8 @@ public class SelectSort {
             printer(arr);
         }
         //printer(arr);
-        System.out.println("num : " + num );
+        System.out.println("num : " + num);
     }
-
     public static void selectSortPlus(int[] arr) {
         int num = 0;
         for (int i = 0; i < arr.length; i++) {

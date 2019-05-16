@@ -58,4 +58,49 @@ public class QuickSort {
         arr[index] = pivot;//pivot:枢轴；中心点；旋转运动
         return index;
     }
+    public static void bubbleSortSuper(int[] arr){
+        int lastExchIndex=0;
+        int sortBorder = arr.length-1;
+        for (int i = 0;i<arr.length;i++){
+            boolean isSorted = true;
+            for (int j = 0;j< sortBorder;j++){
+                if (arr[j] > arr[j+1]){
+                    exch(arr,j,j+1);
+                    isSorted = false;
+                    lastExchIndex = j;
+                }
+            }
+            sortBorder = lastExchIndex;
+            if (isSorted == true){
+                break;
+            }
+        }
+
+
+    }
+    public static void exch(int[] arr ,int i ,int j ){
+        int temp = arr[i] ;
+        arr[i] = arr[j];
+        arr[j] = temp;
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
