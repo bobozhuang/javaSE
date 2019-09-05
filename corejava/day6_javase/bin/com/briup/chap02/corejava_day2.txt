@@ -1,0 +1,777 @@
+﻿chap02
+
+目标：
+ 1. 标识符、关键字和类型介绍
+
+
+            2. 如何构建类
+---------------------------------
+
+
+
+1.java代码中的注释
+  作用：使部分内容只为程序员可见，不为编译器所编译、虚拟机所执行
+  位置：类声明前后、方法声明前后、属性声明前后、方法体中。	几乎可以在一个源文件任意位置，但不能在一个关键字字符中插入注释
+  类型:
+	
+	1) 单行注释：
+            //text    ——从 // 到本行结束的所有字符均作为注释而被编译器忽略
+      
+	2) 多行注释：
+           /*text*/   ——从 /* 到 */ 间的所有字符会被编译器忽略
+
+	      3) 文档注释：
+	  /**test*/   ——从"/**"到"*/"间的所有字符会被编译器忽略。当这类注释出现在任何声明(如类的声明、类的成员变	量的声明或者类的成员方法的声明)之前时，会作为JavaDoc文档的内容；
+
+    	@author		类的作者
+  	@version	类的版本
+  	@param		方法的参数
+
+  	@return		方法的返回类型
+  	@exception	方法抛出的异常
+  	@see		另外参照...
+  	@since		从什么时候开始使用的
+
+例如:
+	
+package com.briup.ch02;
+	
+
+/**
+
+	 * this is my CommentTest Class
+	
+	 *@author briup
+		
+	 *@version 1.0
+		
+	 *@since JDK1.7
+ 
+	 * */
+
+	public class CommentTest{
+	//表示这个人的名字
+ 
+		private String name;
+
+
+		/**
+
+		 *this is a age of person
+
+	 	 *
+
+	 	 *
+	  	 */
+
+		private int age;
+
+		/**
+
+	 	*@param name :a name of person
+
+	 	*@exception null
+
+	 	*
+	 	*/
+
+		public void setName(String name){
+
+			this.name = name;
+
+	
+		}
+
+		/**
+
+	 	*@return 没有返回类型
+		*
+	 	*/
+
+		public String getName(){
+
+			return this.name;
+
+	
+		}
+
+		public static void main(String[] args){
+
+		/*
+	
+		CommentTest ct = new CommentTest();
+
+			ct.setName("tom");
+
+			String temp = ct.getName();
+
+			System.out.println(temp);
+
+		*/
+
+		}
+
+
+	}
+
+
+
+使用javadoc进行编译：
+		javadoc -d doc src/CommentTest.java
+
+
+如果想显示出author和version
+	javadoc -d doc -author -version src/CommentTest.java
+  
+	或者:	
+	javadoc -d doc -author -version src/*.java
+
+
+
+
+2.
+ 分号、代码块和空格
+
+  1) 每个语句短语以;结束 ;
+
+	类的声明最后不需要加;
+
+		public class Hello
+		{ .... }
+
+	方法的声明最后不需要加;
+
+		public class Hello{
+
+		
+		public void go(){....}
+
+		}
+
+	属性的声明最后一定要加;
+
+		public class Hello{
+
+			int id;
+
+			private String name;
+
+			public int age;
+
+		public void go(){....}
+
+		}
+
+  2) 代码段以{}结束;
+	
+	常见的有：
+
+		类的声明后加{}
+
+		方法的声明后加{}
+
+        注意:代码的{}后面都不加;
+
+  3) 空白处（空格、tab键、新行和回车（几个语句短语连接在一起））是无关紧要的。
+
+
+3. 标识符
+   类、方法和变量的名字
+   
+	1) java标识符以字母、_和$开头，不能以数字开头，后跟字母、数字、“_”和“$”的组合;
+
+ 	2) 大小写敏感
+
+ 	3) 没有长度限制。
+   
+	4）不能是java中的关键字
+
+   
+	举例：  合法标识符		非法标识符
+
+		  try1                   try#
+	
+	 	 GROUP_7                7GROUP
+
+		  openDoor               open-door
+
+		  boolean1               boolean
+
+		  _int			int
+
+		  $int			int
+
+
+
+
+4. 关键字
+ Java语言的关键字是程序代码中的特殊字符。
+包括：
+    . 类和接口的声明——class, extends, implements, interface
+  (extends一个是继承，一个是实现接口，继承这个可以理解为继承父类的方法，父类中的方法可以在子类中用到，super(),实现接口就是在接口中定义了方法，这个方法要你自己去实现，接口可以看作一个标准，比如定义了一个动物的接口，它里面有吃（eat()）这个方法，你就可以实现这个方法implements，这个方法是自己写，可以是吃苹果，吃梨子，香蕉，或者其他的。IMPLEMENTS就是具体实现这个接口。)
+	 . 包引入和包声明——import, package
+
+	 . 数据类型——boolean, byte, char, double, float, int, long, short
+	
+	. 某些数据类型的可选值——false, true, null
+	
+	. 流程控制——break, case, continue, default, do, else, for, if, return, switch, while
+
+	 . 异常处理——catch, finally, throw, throws, try
+	 . 修饰符——abstract, final, native, private, protected, public, static, synchronized, transient, volatile
+
+	 . 操作符——instanceof
+
+	 . 创建对象——new
+
+	 . 引用——this, super
+
+	 . 方法返回类型——void
+	
+
+ Java语言的保留字是指预留的关键字，它们虽然现在没有作为关键字，但在以后的升级版本中有可能作为关键字。
+	
+ . 所有关键字都是小写；
+	
+ . friendly, sizeof不是Java语言的关键字，这有别于C++；
+	
+ . 程序中标识符不能以关键字命名；
+
+
+5. 基本类型：
+ 
+ Java语言把数据类型分为基本类型和引用类型
+
+	基本类型:float double byte short int long char boolean
+ 
+	引用类型: 类类型 接口类型 数组类型
+
+	  
+  计算机中:			整数	
+	
+  1字节=8位
+     0000 0001     
+    10
+        
+ byte	1字节	8位  -2^7 2^7-1		-128 127
+	 
+ short	2	16位			-65536  65535
+
+ int	4	32位
+	 
+ long	8	64位
+
+浮点型数据    3.1415926
+	
+  float         32位
+	
+  double	64位
+
+	  
+boolean	8位 true false
+	
+
+  char   16位
+	(java中采用unicode编码,所以是俩个字节表示一个字符,那也就是说在其他字符编码中可能不是使用俩个字节表示一个字符)
+
+
+
+6.boolean类型
+  boolean类型的值为 true或者false,在JVM中会转换为0或者1
+  0代表的是false  1代表的是true
+  boolean flag = ture;
+  boolean bool = false;
+  
+  
+
+
+7.char类型
+        注意: char是字符和字符串String是不一样的
+ 
+                 字符串String是类,而字符char是基本数据类型
+
+                 字符串String是由一个一个的字符char组成的
+
+1) 字符编码
+
+   Java语言对文本字符采用Unicode字符编码。由于计算机内存只能存取二进制数据，因此必须为各个字符进行编码。
+所谓字符编码，是指用一串二进制数据来表示特定的字符。
+    常见的字符编码包括：
+	a. ASCII字符编码
+
+      ASCII--Amecian Standard Code for Information Interchange(美国信息交换标准代码). 主用于表达现代英语
+和其他西欧语言中的字符。它是现今最通用的单字节编码系统，它只用一个字节的7位，一共表示128个字符。
+
+   	b. ISO-8859-1字符编码
+
+      又称为Latin-1, 是国际标准化组织(ISO)为西欧语言中的字符制定的编码，用一个字节(8位)来为字符编码，与
+ASCII字符编码兼容。所谓兼容，是指对于	相同的字符，它的ASCII字符编码和ISO-8859-1字符编码相同。
+
+	
+
+c. GB2312字符编码
+
+	它包括对简体中文字符的编码，一共收录了7445个字符(6763个汉字+682个其他字符. 它与ASCII字符编码兼容。
+	
+d. GBK字符编码
+
+      对GB2312字符编码的扩展，收录了21886个字符(21003个字符+其它字符), 它与GB2312字符编码兼容。
+
+
+ e. Unicode字符编码：
+
+      由国际Unicode协会编制，收录了全世界所有语言文字中的字符，是一种跨平台的字符编码。
+
+
+      UCS(Universal Character Set)是指采用Unicode字符编码的通用字符集。
+
+      Unicode具有两种编码方案：
+
+       . 用2个字节(16位)编码，被称为UCS-2, Java语言采用;
+
+       . 用4个字节(32位)编码，被称为UCS-4;
+
+
+f. UTF字符编码
+
+      有些操作系统不完全支持16位或32位的Unicode字符编码，UTF(UCS Transformation Format)字符编码能够把
+
+      Unicode字符编码转换为操作系统支持的编码，常见的UTF字符编码包括UTF-8, UTF-7和UTF-16.
+
+
+
+  2) char的几种可能取值
+
+      
+    Java语言采用Unicode字符编码，字符占2个字节。
+
+    	 字符a的二进制数据形式为 0000 0000 0110 0001
+
+         十六进制数据形式为 0x0061
+
+         十进制数据形式为	 97
+
+
+    以下5种赋值方式是等价的：
+
+    	字符用单引号引着(英文输入法下面的单引号)
+
+	字符串用双引号引着
+
+    char c = 'a';
+    char c = '\u0061';
+        //设定"a"的十六进制数据的Unicode字符编码
+    char c = 0x0061;
+        //设定"a"的十六进制数据的Unicode字符编码 0x开头的数字位16进制
+    char c = 97;
+        //设定"a"的十进制数据的Unicode字符编码
+    char c = 0141;
+        //设定"a"的八进制数据的Unicode字符编码0开头的数字位16进制
+
+	  其他一些例子:
+    char a1 = 'a';
+	//一个字母
+    char a2 = '中';
+	//一个中文字符
+    char a3 = '\u0060'
+	//unicode编码
+
+  
+  3) 转义字符
+
+
+    Java编程人员在给字符变量赋值时，通常直接从键盘输入特定的字符，而不会使用Unicode字符编码，因为很难记住各种字符的Unicode字符编码值。
+
+
+    对于有些特殊字符，比如单引号，如不知道它的Unicode字符编码，直接从键盘输入编译错误：
+
+    char c = ''';
+           //编码出错
+
+    为了解决这个问题，可采用转义字符来表示单引号和其他特殊字符： 
+
+    char c = '\'';
+    char c = '\;';
+
+
+    转义字符以反斜杠开头，常用转义字符：
+
+    \n           换行符，将光标定位到下一行的开头；
+	\t           垂直制表符，将光标移到下一个制表符的位置；
+				   
+    \\           反斜杠字符
+    
+	\'           单引号字符
+
+	\"           双引号字符
+
+
+
+
+8. 整数类型
+
+    byte, short, int和long都是整数类型，并且都是有符号整数。与有符号整数对应的是无符号整数，两者的区别在于
+    把二进制数转换为十进制整数的方式不一样。
+
+
+
+    . 有符号整数把二进制数的首位作为符号数，当首位是0时，对应十进制的正整数，当首位是1时，对应十进制的负整
+数。对于一个字节的二进制数, 它对应的十进制数的取值范围是-128 - 127。
+
+    . 无符号整数把二进制数的所有位转换为正整数。对于一个字节的二进制数, 它对应的十进制数的取值范围是0 - 255。
+
+    在Java语言中，为了区分不同进制的数据，八进制数以“0”开头，十六制以“0x”开头
+
+    例如:
+	一个字节的二进制数      八进制数         十六进制数        有符号十进制数       无符号十进制数
+    -------------------------------------------------------------------------------------------------
+ 
+ 		0000 0000           0000             0x00              0                    0
+
+	        1111 1111           0377             0xFF              -1                   255
+	    
+		0111 1111           0177             0x7F              127                  127
+
+		1000 0000           0200             0x80              -128                 128
+ 
+   
+   整形型: 默认数据类型是	int
+
+    byte (8位)
+    byte a = 10;
+
+    short (16位)
+    short a = 20;
+
+    int (32位)
+    int a = 30;
+
+    long (64位)
+    long a = 40L;
+    long b = 50l;
+
+    声明的时候后面要加大写L或者小写l,建议加上大写的L,因为小写的l和数字1很像似
+
+
+
+9. 浮点类型
+   java中表示小数的数据类型
+   浮点型:默认数据类型是double
+
+   float (32位)
+   float a = 10.3f;
+
+   double (64位)
+   double a =10.8d;
+
+
+
+
+
+10. 变量的申明和赋值
+
+  程序的基本功能是处理数据
+  程序用变量来表示数据；
+  程序中必须先定义变量才能使用；
+  定义变量是指设定变量的数据类型和变量的名字，定义变量的基本语法为：
+	
+
+  数据类型  变量名；
+  
+  int age = 20;
+  
+  age++;
+
+
+  boolean gender;
+
+
+
+ 
+
+ Java语言要求变量遵循先定义，再初始化，然后使用的规则。变量的初始化是指自从变量定义以后，首次给它赋初始
+值的过程。
+	例：
+
+	int a;         //定义变量a
+
+	  a = 1;             //初始化变量a
+
+	  a++;             //使用变量a
+
+	  int b=a;        //定义变量b, 初始化变量b, 使用变量a的值;
+	
+	b++;            //使用变量b
+
+
+
+11.基本类型间的转换:
+
+   隐式转换:(不需要我们做什么,JVM自动转换)
+
+   byte a = 10; 
+   int b = a;
+   float f = 3.1415f; 
+   double d = f;
+
+
+   显示转换:(需要我们手动写上转换的类型)
+ 
+   int a1 = 10;
+   byte b1 =(byte)a1;
+	
+
+   int a = 1;
+   byte b = 2;
+
+   byte c = (byte)a+b;
+
+   float a = 8.9f;
+   double b = a;
+
+   float a;
+
+   变量的声明
+   float a = 8.9f;
+
+   变量的声明并且赋值
+   double b = 10 - a;
+
+
+   double a = 8.9;
+   double b = 10 - a;
+	
+
+
+报错:
+   double a = 8.9;
+   float b = 10 - a;
+
+12. 推荐命名规则
+
+
+  1) 类名以大写字母开头；
+	Hello Person Teacher  TypeTest
+
+  2) 接口名以大写字母开头；
+	Eat Fly
+
+  3) 方法名以小写字母开头；
+	say go doSomething
+ 
+  4) 变量名以小写字母开头；
+	name age myName myAge
+
+  5) 常量名全部大写，多个单词以"_"连接；
+	FILE_TYPE  PERSON_TITLE
+
+
+13. 理解对象
+
+  面向对象的开发方法把软件系统看成各种对象的集合，对象就是最小的子系统，一组相关的对象能够组合成更复杂的
+  子系统。面向对象的开发方法将软件系统看成各种对象的集合，接近人的自然思维方式。
+
+
+  对象是对问题领域中事件的抽象。对象具有以下特性：
+
+
+  1) 万物皆为对象。问题领域中的实体和概念都可以抽象为对象。例如学生，成绩单、教师、课和教室。
+
+  2) 每个对象都是惟一的。正如世界上不存在一模一样的叶子。
+
+  3) 对象具有属性和行为。
+
+     	例如小张，性别女，年龄22，身高1.6m, 体重40kg, 能够学习，唱歌。小张的属性包括姓名、性别、年龄、身高和
+体重，行为包括学习、唱歌。
+     	例如一部手机，牌子是诺基亚、价格是2000元，银白色，能够拍照、打电话和收发短信等。这部手机的属性包括品
+牌类型type、价格price和颜色color，行为包括拍照takePhoto()，打电话call()，收发短信receiveMessage()和发短
+信sendMessage().
+
+  4) 对象具有状态。状态是指某个瞬间对象的各个属性的取值。对象的某些行为会改变对象自身的状态，即属性的取值。
+	
+例如小张本来  体重为40kg，经为减肥后，体重减到45kg. 
+
+     肥胖状态: 40kg
+            |
+            | 减肥行为
+            |                            
+     肥胖状态: 35kg
+ 
+ 5) 每个对象都是某个类的实例。小张和小王都属于学生类、中国和美国都属于国家类、中文和英文都属于语言类。
+     类是具有相同属性和行为的对象的集合。
+
+     同一个类的所有实例都有相同属性，但属性取值不一事实上相同，但是它们的状态不一定相同。
+
+	例如小张和小王都属
+于学生类，都有姓名、性别、年龄、身高和体重这些属性，但是他们的属性取值不同。
+
+     同一个类的所有实例都有相同行为，意味着它们具有一些相同的功能。
+
+
+
+14. 创建类
+
+  类是一组具有相同属性和行为对象的模板。面向对象编程的主要任务就是定义对象模型中的各个类。
+
+
+  package sample;
+
+
+  public class Teacher {
+
+
+      /**attributes of a teacher*/
+
+      private String name;
+
+      private int age;
+
+      private double salary;
+
+      /** Creates a new instance of Teacher */
+
+      public Teacher(String name, int age, double salary)
+	 {
+
+          this.salary = salary;
+
+          this.age = age;
+
+          this.name = name;
+
+      	}
+
+      /**operations on properties */
+
+      /** get the name of this teacher */
+
+      public String getName() {
+		 return name;
+	 }
+
+      /**get the salary of this teacher */
+
+      public double getSalary() {
+		 return salary;
+	 }
+
+      /**get the age of teacher teacher */
+
+      public int getAge() { return age; }
+ 
+     public void teach(String[] names){
+
+
+      }
+
+
+  }
+
+
+
+
+根据具体对象 抽象出来的类
+
+
+  1 属性 属性没有值,一般情况下声明为私有的
+
+  2 普通方法 代表某一个个体可以做的事
+
+
+  3 构造器  用来拿到类的实例
+
+  4 get/set 用来修改属性值
+
+  
+
+
+
+
+
+  代码解析：
+ 
+
+  1) package sample;
+     	包声明语句，将Java类放到特定的包中，便于类的组织、权限访问和区分名字相同的类。
+
+   2) public class Teacher {...}
+     类的声明语句，类名为Teacher, public修饰符意味着这个类可以被公开访问；
+
+     声明类的格式：class 类名 {
+         类内容
+     }
+
+
+   3) private String name;
+     类的属性(也称为成员变量)的声明语句；Teacher类有一个name属性，字符串类型，private修饰符意味着这个属性
+不能被公开访问。
+
+   4) public String getName() { return name; }
+     方法的声明语句和方法体
+     方法名为getName，不带参数，String表明返回类型为String。public表明这个方法可以被公开访问。getName后紧跟
+的大括号为方法体，代表getName的具体实现。
+
+
+     声明方法的格式： 
+
+     返回值类型 方法名 (参数列表) {
+         方法体
+     }
+
+     返回值类型是方法的返回数据的类型, 如果返回值类型为void, 表示没有返回值。
+     方法名是任意合法的标识符;
+     参数列表可包含零个或多个参数，参数之间以逗号","分开。
+     方法体每个语句用";"结束；
+     方法体中使用return语句返回数据或结束本方法的执行；
+
+  注：不介绍构造方法。在面向对象章节会提到。
+                   
+
+
+
+15. 创建实例
+
+  new 
+
+  
+	public static void main(String[] args){
+
+          Teacher gzhu = new Teacher("George Zhu", 30, 10000);
+
+          System.out.println("Teacher: " + gzhu.getName());
+
+          System.out.println("\tAge: " + gzhu.getAge());
+
+          System.out.println("\tSalary: " + gzhu.getSalary());
+	
+  }
+
+
+  main()方法是Java应用程序的入口点，每个Java应用程序都是从main()方法开始运行的。作为程序入口的main()方法必
+须同时符合以下几个条件：
+  . 用public static修饰；
+
+  . 返回类型为void;
+
+  . 方法名为main;
+
+  . 参数类型为String[];
+
+  包含main方法的类又叫主程序类。
+
+  类创建好之后，通过new关键字创建具体对象。
+	它有以下作用：
+	
+  . 为对象分配内存空间，将对象的实例变量自动初始化为其变量类型的默认值；
+	
+  . 如实例变量显示初始化，将初始化值赋给实例变量；
+	
+  . 调用构造方法；
+
+  	  . 返回对象的引用；
+
+
+
+
+
+
