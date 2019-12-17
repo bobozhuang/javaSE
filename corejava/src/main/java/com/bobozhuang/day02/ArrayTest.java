@@ -22,6 +22,25 @@ public class ArrayTest {
         for (int m : i) {
             System.out.print(m + " ");
         }
+        System.out.println("------");
+
+        String str = "/ebank/spdb/devops";
+        String[] split = str.split("/");
+        for (int j = 0; j < split.length; j++) {
+            System.out.println(split[j]);
+        }
+
+        System.out.println("------");
+
+        String[] strings = new String[]{"qw","e"};
+        strings[0]=null;
+        System.out.println(strings[0]);
+
+        String[] strrr =null;
+
+
+        System.out.println(strrr.length);
+
     }
 
 }

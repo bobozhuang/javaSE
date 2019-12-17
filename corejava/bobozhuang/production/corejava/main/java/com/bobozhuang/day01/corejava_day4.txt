@@ -1,0 +1,397 @@
+﻿–目标：数组的创建和使用
+
+------------------------------------------------------------
+第四章： Array
+
+数组是指一组数据的集合，数组中的每个数据称为元素。在Java中，数组也是Java对象。数组中的元素可以是任意类型(包括基本类型和引
+用类),但同一个数组里只能存放类型相同的元素。创建数组大致包括如下步骤：
+	
+. 声明一个数组类型的引用变量，简称为数组变量；
+. 用new语句构造数组的实例。new语句为数组分配内存，并且为数组中的每个元素赋予默认值；
+. 初始化，即为数组的每个元素设置合适的初始值。
+
+声明/创建/初始化赋值
+
+本章的主要内容:
+
+. 数组的创建，包括基本类型数组的创建和 类类型数组的创建；
+. 访问数组的元素和长度属性；
+. 创建一个数组的数组；
+
+
+我之前已经接触过数组了,就是主函数(main方法)中的参数:
+public static void main(String[] args){
+	
+}
+
+一. 数组变量的声明；
+
+    声明数组：
+    1) 一个存放同一类型数据的集合
+       a. 即可以是基本类型，也可以是 对象类型Student[] arr = new Student[1]；
+       b. 数组中的每个数据为元素；
+    2) 数组是一个对象，成员是数组长度和数组中的元素;
+    3) 声明了一个数组变量并不是创建了一个对象;
+    4) 声明数组的方式：
+
+       int[] IArray 或者 int IArray[] 	基本数据类型数组，数组中存放的是基本数据类型。
+       Teacher[] tArray 或者 Teacher tArray[]	类类型数组，数组中存放的是Teacher类创建的若干个的对象。
+
+    注意：1) 声明数组变量的时侯，不能指定数组的长度，以下声明方式是非法的。
+
+             int x[1];
+             int[2] x;
+
+
+二. 初始化
+
+    初始化：自变量创建后首次赋值的过程；
+
+    1. 创建数组对象；
+
+       数组对象和其他Java对象一样，也用new语句创建；
+
+       int[] iArray = new int[2];
+
+       new int[2]语句执行以下步骤：
+
+       a. 在堆区中为数组分配内存空间，以上代码创建了一个包含2个元素的int数组
+       b. 为数组中的每个元素赋予其数据类型的默认值。
+          byte/short/int/long 	0
+          float					0.0f
+          double                0.0d
+          String                null
+          char                  '\u0000'
+          boolean               false
+       c. 返回数组对象的引用
+       
+       在用new语句创建数组对象时，需要指定数组长度。数组长度表示数组中包含的元素数目。数组长度可以用具体的数值表示，也可以用
+       变量表示。如：
+   
+       int[] x = new int[10];
+       或
+       int size=10;
+       int[] x = new int[size];
+
+       数组的长度可以为0，此时数组中一个元素也没有。例如：
+
+       int[] x = new int[0];
+
+       对于Java类的程序入口方法main(String args[]),如果运行时这个类没有输入参数，那么main()方法的参数args并不是null, 而是一个
+       长度为0的数组。例如：
+
+       public class Sample {
+           public static void main(String[] args) {
+                System.out.println(args.length);           //打印0
+           }
+       }
+
+       数组对象创建后，它的长度是固定的。数组对象的长度是无法改变的，但是数组变量可以改变所引用的数组对象。
+
+       int[] x = new int[3];
+       int[] y = x;
+       x = new int[4];
+
+    2. 初始化数组对象；       
+
+       数组中的每个元素都有一个索引，或者称为下标。数组中的第一个元素的索引为0，第二个元素的索引为1, 依次类推。
+       通过索引可以访问数组中的元素或者给数组中元素内容赋值。
+
+       1) 声明、创建、初始化分开： 
+		  //声明
+          int[] iArray;
+          //创建
+          iArray = new int[2];
+		  //初始化
+          iArray[0] = 0;
+          iArray[1] = 1; 
+
+       2) 声明、创建的同时并初始化数组；
+
+          int[] iArray = {0, 1};
+
+		  int[] iArray = new int[]{0, 1};
+
+          Student sArray[] = new Student[] { new Student(“George”, “Male”, 20), new Student()};?????????????
+          Student[] stArray = { new Student(), new Student()} ;
+
+          注意：a.下面这些都是非法的数组初始化方式：
+                   int[] x = new int[5]{5,4,3,2,1};           //编译出错，创建数组对象的时并初始同化的时候就不能指定数组长度了；
+                   
+                   int[] x;
+                   x = {5,4,3,2,1};                           //{5,4,3,2,1}必须在声明数组变量的语句中使用，不能单独使用
+
+    3. 多维数组；
+
+       Java支持多维数组。假定某个宾馆有三层楼，第一层有4个房间，第二层有3个房间，第三层有5个房间。某一天客户人住宿情况如
+       下图所示:
+
+       第三层:           |    |Tom |Jerry|    |Rose|
+       第二层：          |Mary|    |Kevin|
+       第一层：          |Mike|Jane|Duke |    |
+
+       可以用两维数组来存储各个房间的客人信息。
+
+       // 声明
+       int[][] i; int i[][];
+       //  创建
+       new int[4][]; 
+       // 赋值
+
+       i[0] = new int[]{11,22,33};
+
+       i[0] = new int[4];
+       i[0][0] = 1;
+       i[0][1] = 2;
+
+
+
+
+
+       String[][] room = new String[3][];
+       room[0] = new Stirng[]{"Mike","Jane","Duke",null};
+       room[1] = new String[]{"Mary",null,"kevin"};
+       room[2] = new String[]{null,"Tom","Jerry",null,"Rose"}
+
+       room[0][0]="mike";
+       
+
+       以上代码等价于：
+
+       String[][] room = {
+			    {"Mike","Jane","Duke",null},
+                            {"Mary",null,"kevin"},
+                            {null,"Tom","Jerry",null,"Rose"}
+			 };
+
+
+       多维数组本质上是数组的数组，数组的元素内容还是数组；
+
+       写一个类MultiArray.java来创造一个二维数组并输出其中元素
+
+
+       一位数组
+
+       二维数组
+       for(int i=0;i<arr.length;i+=1){
+       		System.out.println(arr[i]);
+       	   for(int j=0;i<arr[i].length;j++){
+
+       	   		System.out.println(arr[i][j]);
+       	   }
+       }
+       for(int i=1;;){
+
+       }
+
+
+
+       	int i = 10;
+       	String[] names = new String[i];
+
+
+
+
+    4. 数组的边界：
+       
+       1) 一个数组的下标从0开始，数组通过数组的对象引用变量的下标访问数组。
+
+          数组中第一个元素的索引为0, 第二元素的索引为1，依次类推。如果一个数组长度是5，要访问最后一个数组元素可以通过
+          下标4来访问，如果通过下标5访问，超出了数组的边界，在运行时会抛出ArrayIndexOutOfBoundsException。
+
+       2) 通过调用数组的length属性可以获得一个数组的元素个数（数组长度）。
+       
+          所有Java数组都有一个length属性，表示数组的长度. 该属性只能读取，但是不能修改。
+
+
+          以下修改数组的length属性，这是非法的。
+
+          int[] x = new int[4];
+          x.length = 10;            //编译出错，length属性不能被修改。
+
+       注：a. 数组变量必须在指向一个数组对象之后，才能访问其元素。
+
+              public class Sample {
+                   private int[] x;
+
+                   public static void main(String[] args) {
+                          Sample s = new Sample();
+                          System.out.println(s.x);            //打印null
+                          System.out.println(s.x[0]);         //运行时抛出NullPointerException
+                          System.out.println(s.x.length);      //运行时抛出NullPointerException
+                   }
+              }
+
+           b. 当数组的元素为引用类型时，数组中存放的是对象的引用，而不是对象本身；
+
+
+      练习：1) 求一组值的平均值：  
+
+                 public class ArrayAvgTest {
+                      public double avg(int[] n) {
+                           double result = 0.0;
+                           for(int i=0;i<n.length;i++) {
+                                  result += n[i];
+                           }
+                           result /= n.length;
+                           
+                           return result;
+                      }
+
+                      public static void main(String[] args) {
+                           ArrayAvgTest a = new ArrayAvgTest();
+                           int[] i = {100,60,80,90,75,38};
+                           System.out.println("Avg score: " + a.avg(i));
+                      }
+                 }          
+
+             2)  求一组值的最大值：  
+
+                 public class ArrayMaxTest {
+                      public int max(int[] n) {
+                           int result = n[0];
+                           for(int i=1;i<n.length;i++) {
+                                  if(result<n[i])
+                                        result = n[i];
+                           }
+                          
+                           return result;
+                      }
+
+                      public static void main(String[] args) {
+                           ArrayMaxTest a = new ArrayMaxTest();
+                           int[] n = {100,60,80,90,75,38};
+                           System.out.println("Max score: " + a.max(n));
+                      }
+                 } 
+
+              3) 数组内容排序
+
+                 冒泡排序：值较小的数逐渐向数组的顶部(即朝第一个元素)冒上来，就像水中的气泡上升一样，同时，值较大的数据逐渐
+                           向数组的底部(即朝最后一个元素)沉下去。这种算法用嵌套的循环对整个数组进行数次遍历，每次遍历都要比
+                           较数组中相邻的一对元素，如果这对元素以升序(或者值相等)的顺序排列，那么保持它们的位置不变；如果这
+                           对元素以降序的顺序排列，那么交换它们的值。
+
+                 数组原内容：100,60,80,90,75,38
+
+		 第一次循环：	60	80	90	75	38	100	
+		 第二次循环：	60	80	75	38	90	100	
+		 第三次循环：	60	75	38	80	90	100	
+		 第四次循环：	60	38	75	80	90	100	
+		 第五次循环：	38	60	75	80	90	100
+
+		public class ArraySortTest {
+
+			public void sort(int[] n) {
+				for(int i=0;i<n.length-1;i++) {
+					for(int j=0;j<n.length-i-1;j++) {
+						if(n[j]>n[j+1]) {
+							int temp = n[j];
+							n[j] = n[j+1];
+							n[j+1] = temp;
+						}
+					}
+					print(n);
+				}
+			}
+			
+			public void print(int[] n) {
+				for(int i=0;i<n.length;i++){
+					System.out.print(n[i] + "\t");
+					}
+				System.out.println();
+			}
+			
+			public static void main(String[] args) {
+				ArraySortTest s = new ArraySortTest();
+				int[] n = {100,60,80,90,75,38};
+				s.sort(n);
+				s.print(n);
+			}
+		}                 
+
+              4) java.util.Arrays辅助类的使用。sort(int[] n)以及binarySearch(int[] n,int key)
+                 方法的使用。
+
+                 注意： a. 这二个方法均为static方法，可直接通过类名使用；
+                       b. binarySearch方法必须保证数组中的元素已经按照升序排列，这样才能得到正确的结果；
+
+		import java.util.Arrays;
+
+		public class ArraySortTest2 {
+
+			public void print(int[] n) {
+				for(int i=0;i<n.length;i++)
+					System.out.print(n[i] + "\t");
+				System.out.println();
+			}
+			
+			public static void main(String[] args) {
+				ArraySortTest2 s = new ArraySortTest2();
+				int[] n = {100,60,80,90,75,38};
+				Arrays.sort(n);
+				System.out.println(Arrays.binarySearch(n, 80));
+				s.print(n);
+				System.out.println(Arrays.binarySearch(n, 80));		
+			}
+		}
+
+
+              5)从众多手机号码中抽取一个获奖手机号码
+
+		public class ArrayRandomTest {
+			public String getTel(String[] n) {
+				int index = (int)(Math.random()*n.length);
+				return n[index];
+			}
+
+			public static void main(String[] args) {
+				ArrayRandomTest a = new ArrayRandomTest();
+				String[] n = { "1318259016", "13564560540","13858687810","13999999999"};
+				System.out.println(a.getTel(n));
+			}
+		}
+
+              6)产生四位长度的验证码, 验证码内容为大小写字母或数字组成；
+
+		public class ArrayValidateCodeTest {
+
+			private char[] c;
+			
+			public ArrayValidateCodeTest() {
+				String s = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+				c = s.toCharArray();
+			}
+			
+			public String getValidateCode() {
+				int i1 = (int)(Math.random()*c.length);
+				int i2 = (int)(Math.random()*c.length);
+				int i3 = (int)(Math.random()*c.length);
+				int i4 = (int)(Math.random()*c.length);
+				
+				return ""+c[i1]+c[i2]+c[i3]+c[i4];
+			}
+			
+			public static void main(String[] args) {
+				ArrayValidateCodeTest a = new ArrayValidateCodeTest();
+				System.out.println(a.getValidateCode());
+			}
+		}
+
+
+     5. 数组的拷贝：      
+ 
+       数组的长度一旦确定之后便不能调整，我们可以通过复制数组的内容变通实现改变数组长度。在System类中提供一个辅助的
+       arraycopy方法提供复制数组内容的功能：
+
+       public static void arraycopy(Object src,
+                             int srcPos,
+                             Object dest,
+                             int destPos,
+                             int length)
+
+	参数1,需要被复制的目标数组
+	参数2,从这个数组的那个一个位置开始复制
+	参数3,需要把数据复制到的另外的那一个新的数组对象
+	参数4,复制到新数组里面哪个位置(从这个位置开始算)
+	参数5,复制的目标数

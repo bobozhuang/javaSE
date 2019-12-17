@@ -11,7 +11,7 @@ public class DataOutputStreamTest {
 						("src/a.txt"));
 			dos.writeInt(100);
 			dos.writeDouble(3.14);
-			dos.writeChar('中');
+			//dos.writeChar('中');
 			dos.writeUTF("山西大学");
 			
 			dos.flush();
