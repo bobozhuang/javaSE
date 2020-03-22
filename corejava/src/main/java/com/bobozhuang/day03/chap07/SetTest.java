@@ -5,22 +5,47 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class SetTest {
-	//æ— åºï¼Œä¸å¯é‡å¤çš„æ•°æ®
+	//ÎŞĞò£¬²»¿ÉÖØ¸´µÄÊı¾İ
 	public static void main(String[] args) {
 		Set set = new HashSet();
-		Student s1 = new Student(101,"å¼ ä¸‰",true);
-		Student s2 = new Student(101,"æå››",true);
-		Student s3 = new Student(101,"å¼ ä¸‰",false);
+		Student s1 = new Student(101,"ÕÅÈı",true);
+		Student s2 = new Student(101,"ÀîËÄ",true);
+		Student s3 = new Student(101,"ÕÅÈı",false);
+
 		set.add(s1);
 		set.add(s2);
 		set.add(s3);
+		set.add(null);
 		System.out.println
-			("seté›†åˆä¸­å…ƒç´ ä¸ªæ•°:"+set.size());
+			("set¼¯ºÏÖĞÔªËØ¸öÊı:"+set.size());
 		Iterator ite = set.iterator();
 		while (ite.hasNext()) {
 			Object o = ite.next();
+
 			System.out.println(o);
+//			if (null == o)
+//			set.remove(o);
 		}
-		
+		System.out.println("----" + set.toString());
+		while (ite.hasNext()) {
+			Object o = ite.next();
+
+			System.out.println(o);
+
+		}
+		try {
+			int a = 8/0;
+		}catch (Exception e){
+			System.out.println("aaa");
+		}
+
+		System.out.println("----");
+
+		String s = "asdff";
+		System.out.println(s);
+		String substring = s.substring(0, 8);
+		System.out.println(substring);
+
+
 	}
 }

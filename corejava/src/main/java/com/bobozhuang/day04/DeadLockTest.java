@@ -22,10 +22,10 @@ class TestAB extends Thread{
 		while(true){
 			synchronized (A) {
 				System.out.println
-					(name+"鎷垮埌浜咥,鍑嗗鍘绘嬁B");
+					(name+"拿到了A,准备去拿B");
 				synchronized (B) {
 					System.out.println
-						(name+"鎷垮埌浜咥鍙堟嬁鍒颁簡B,杩愯瀹屾瘯");
+						(name+"拿到了A又拿到了B,运行完毕");
 				}
 			}
 		}
@@ -45,10 +45,10 @@ class TestBA extends Thread{
 		while(true){
 			synchronized (B) {
 				System.out.println
-					(name+"鎷垮埌浜咮,鍑嗗鍘绘嬁A");
+					(name+"拿到了B,准备去拿A");
 				synchronized (A) {
 					System.out.println
-						(name+"鎷垮埌浜咮鍙堟嬁鍒颁簡A,杩愯瀹屾瘯");
+						(name+"拿到了B又拿到了A,运行完毕");
 				}
 			}
 		}

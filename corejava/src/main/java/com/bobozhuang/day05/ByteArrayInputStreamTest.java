@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ByteArrayInputStreamTest {
 	public static void main(String[] args) {
-		byte[] b = "程序的主要".getBytes();
+		byte[] b = "程序的主序".getBytes();
 		ByteArrayInputStream bis = null;
 		try {
 			bis = new ByteArrayInputStream(b); 

@@ -6,7 +6,7 @@ public class ExceptionTest {
 		System.out.println("测试程序是否继续运行");
 	}
 	
-	public void goToWork(String str)throws MyWorkException{
+	public void goToWork(String str)throws MyWorkException {
 		if(str.equals("天气晴朗")){
 			System.out.println("开开心心去上班~");
 		}

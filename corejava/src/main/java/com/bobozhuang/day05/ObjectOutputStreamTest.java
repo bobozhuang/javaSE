@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -9,9 +10,13 @@ public class ObjectOutputStreamTest {
 				(10	,"张三", 30);
 		ObjectOutputStream oos = null;
 		try {
+			File file = new File("classpath:/d.txt");
+			if (file.exists()){
+				boolean newFile = file.createNewFile();
+				System.out.println(newFile);
+			}
 			oos = new ObjectOutputStream
-					(new FileOutputStream
-						("src/d.txt"));
+					(new FileOutputStream(file));
 			oos.writeObject(s);
 			
 		} catch (Exception e) {
