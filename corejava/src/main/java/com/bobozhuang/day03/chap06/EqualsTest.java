@@ -43,6 +43,24 @@ class Student {
         this.gender = gender;
     }
 
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+        if (!(o instanceof Student)) {
+            return false;
+        }
+        if (this == o) {
+            return true;
+        }
+        Student s = (Student) o;
+        if (this.id == s.id
+                && this.name.equals(s.name)) {
+            return true;
+        }
+        return false;
+    }
+
     public int getId() {
         return id;
     }
@@ -67,23 +85,7 @@ class Student {
         this.gender = gender;
     }
 
-    public boolean equals(Object o) {
-        if (o == null) {
-            return false;
-        }
-        if (!(o instanceof Student)) {
-            return false;
-        }
-        if (this == o) {
-            return true;
-        }
-        Student s = (Student) o;
-        if (this.id == s.id
-                && this.name.equals(s.name)) {
-            return true;
-        }
-        return false;
-    }
+
 
     @Override
     public String toString() {

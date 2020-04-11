@@ -18,7 +18,7 @@ public class TypeTest {
         float f = 3.1415926f;
         double pi = 3.1415926;
         //字符类型
-        //char c = '杰';
+        char c = '杰';
         char c1 = 97;
         char c2 = 0x0061;
         char c3 = '\u59b9';

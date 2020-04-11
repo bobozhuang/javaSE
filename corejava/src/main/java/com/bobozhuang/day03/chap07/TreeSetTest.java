@@ -61,7 +61,7 @@ public class TreeSetTest {
 		for(Iterator it = set.iterator()
 				; it.hasNext()  ;  ){
 			Object o = it.next();
-			
+			System.out.println(o);
 		}
 		
 		

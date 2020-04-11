@@ -12,7 +12,7 @@ class FootBall extends Ball{
 	}
 }
 
-class BusketBall extends Ball{
+class BasketBall extends Ball{
 	public void played(){
 		System.out.println("用手打篮球");
 	}
