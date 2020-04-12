@@ -32,8 +32,8 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         //  1、确定table中下标
         int index = getIndex(k, this.defaultLength);
         System.out.println("index:" + index);
-        //put 时如果key已经存在，就去更行value，所以判断是不是修改
-        MyMap.Entry<K, V> kvEntry = table[index];
+        //put 时如果key已经存在，就去更新value，所以判断是不是修改
+        MyMap.Entry<K, V> kvEntry = table[index];//获取现有数组下标为index的值
         while (null != kvEntry) {
             if (k.equals(kvEntry.getKey())) {//euqals比较，如果相同就将原来的value覆盖
                 return kvEntry.setValue(v);
@@ -59,7 +59,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     private void reSize() {
         if (size >= defaultLength * defaultLoad) {
             System.out.println("Begain resize !");
-            Entry<K, V> newTable[] = new Entry[this.defaultLength << 1];
+            Entry<K, V> newTable[] = new Entry[this.defaultLength << 1];        //通过移位运算容量扩大为原来的2倍
             MyMap.Entry<K, V> entry = null;
             for (int i = 0; i < table.length; i++) {//将原来数组中的entry遍历出来，放入扩容后的数组
                 entry = table[i];
