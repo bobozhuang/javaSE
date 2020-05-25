@@ -1,4 +1,4 @@
-package main.java.com.bobozhuang.day03.chap07;
+package main.java.com.bobozhuang.collection.chap07;
 
 public class GenderTest {
     public static void main(String[] args) {

@@ -7,6 +7,12 @@ import java.util.List;
  * @version V1.0
  * @author: Hubery
  * @Description:
+ *  * 静态方法引用：ClassName::methodName
+ *  * 实例上的实例方法引用：instanceReference::methodName
+ *  * 超类上的实例方法引用：super::methodName
+ *  * 类型上的实例方法引用：ClassName::methodName
+ *  * 构造方法引用：Class::new
+ *  * 数组构造方法引用：TypeName[]::new
  * @date: 2019/4/23 15:12
  * @Package main.java.com.bobozhuang.basic.chap03MethodCite
  * @Copyright: 2019 www.bobozhuang.com Inc. All rights reserved. 注意：本内容仅限于Hubery内部传阅，禁止外泄以及用于其他的商业目的
@@ -38,6 +44,7 @@ class Car {
 class test {
     public static void main(String[] args) {
         // 构造器引用：它的语法是Class::new，或者更一般的Class< T >::new实例如下：
+        Car car1 = new Car();
         final Car car = Car.create(Car::new);
         final List<Car> cars = Arrays.asList(car);
         //静态方法引用：它的语法是Class::static_method，实例如下：
@@ -47,5 +54,6 @@ class test {
         //特定对象的方法引用：它的语法是instance::method实例如下：
         final Car police = Car.create(Car::new);
         cars.forEach(police::follow);
+        Car[] a ;
     }
 }

@@ -38,5 +38,7 @@ public class ArrayListTest {
         {
             System.out.println(ite.next());
         }
+
+
     }
 }

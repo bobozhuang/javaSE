@@ -20,8 +20,8 @@ public class Operator {
         delivery();
     }
     public static void anOperator(){
-        int a = 60;     /* 60 = 0011 1100 */
-        int b = 13;     /* 13 = 0000 1101 */
+        int a = 60;      /* 60 = 0011 1100 */
+        int b = 13;      /* 13 = 0000 1101 */
         int c = 0;
         c = a & b;       /* 12 = 0000 1100 */
         System.out.println("a & b = " + c );

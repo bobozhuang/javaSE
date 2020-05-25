@@ -30,5 +30,13 @@ public class StringByte {
             System.out.printf("y : " + y);
         }
         //1的ASCLL码为49，空格是32 ，这里就可以发现，这个方法是先将字符串每八位（也就是一个字节）截取下来，存入byte数组里的，数字“1”也是用一个字节表示的 。
+        System.out.println("------");
+        String pro = "安徽省";
+        byte[] gbks = pro.getBytes("UTF-8");
+        for (byte x :
+                gbks) {
+            System.out.print("x : " + x);
+        }
+
     }
 }

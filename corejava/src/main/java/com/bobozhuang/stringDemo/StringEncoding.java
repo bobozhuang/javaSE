@@ -37,5 +37,10 @@ public class StringEncoding {
         System.out.println(ss);
 
 
+        String sa = "安徽省"; //这是"你好"的gbk编码的字符串
+        String ssa = new String(sa.getBytes("UTF-8"), "GBK");
+        System.out.println(ssa);
+
+
     }
 }

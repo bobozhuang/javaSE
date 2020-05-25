@@ -34,5 +34,7 @@ public class OperationTest {
         }
         System.out.println("&&:" + m + " " + n);
 
+        System.out.println(16* 2 /3);   //16 10
+
     }
 }

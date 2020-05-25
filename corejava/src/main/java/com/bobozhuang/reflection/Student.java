@@ -1,6 +1,6 @@
 package main.java.com.bobozhuang.reflection;
 
-import main.java.com.bobozhuang.day03.chap07.Teacher;
+import main.java.com.bobozhuang.collection.Teacher;
 
 import java.util.List;
 

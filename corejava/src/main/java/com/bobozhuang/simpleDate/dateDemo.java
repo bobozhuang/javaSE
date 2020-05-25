@@ -19,6 +19,8 @@ public class dateDemo {
 		System.out.println(sdf);
 		System.out.println(sdf.format(date));
 
+		System.out.println(System.currentTimeMillis());
+
 	/*	List<String> ls = new ArrayList<>();
 		String[] arg = new String[] { "cmd", "dir"};
 		String cmd = "cmd dir";

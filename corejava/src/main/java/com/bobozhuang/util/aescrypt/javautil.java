@@ -12,7 +12,12 @@ import java.util.Base64;
 public class javautil {
 
     public static void main(String[] args) {
-        Base64.getDecoder();
+        // Base64.getDecoder();
+
+        String decrypt = "IanoJpuRaw3buQQZfhdwnDLWqAFUJJ2qHbWZJ1IPyFA\\=";
+
+        String decrypt1 = AESCryptoUtil.decrypt(decrypt);
+        System.out.println(decrypt1);
     }
 
 }

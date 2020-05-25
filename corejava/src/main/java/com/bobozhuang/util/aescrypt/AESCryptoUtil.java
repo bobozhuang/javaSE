@@ -66,6 +66,7 @@ public class AESCryptoUtil {
 
     public static void main(String[] args) {
         int times = 0;
+
         while (true) {
             times++;
             String content = "123456";
@@ -77,13 +78,14 @@ public class AESCryptoUtil {
 
                 Scanner sc = new Scanner(System.in);
                 content = sc.nextLine();
-                if ("q".equals(content.trim().toLowerCase()))
+                if ("q".equals(content.trim().toLowerCase())){
                     System.exit(0);
+                }
+
                 String encrypt = encrypt(content.trim());
                 System.out.println("encrypted:");
                 System.out.println(encrypt);
                 System.out.println("\n***************************");
-
 
             }
             catch (Exception e) {

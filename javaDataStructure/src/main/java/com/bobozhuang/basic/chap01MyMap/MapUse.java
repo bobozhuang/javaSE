@@ -42,7 +42,7 @@ public class MapUse {
         hashMap.put("23","二三");
         hashMap.put("24","二四");
 
-        traverseA(hashMap);
+        traverseD(hashMap);
 
 
     }
