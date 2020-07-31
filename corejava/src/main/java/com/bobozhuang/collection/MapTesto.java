@@ -21,5 +21,9 @@ public class MapTesto {
         hashMap.put("t","d");
         System.out.println(hashMap.toString());
 
+        while (true){
+            continue;
+        }
+
     }
 }

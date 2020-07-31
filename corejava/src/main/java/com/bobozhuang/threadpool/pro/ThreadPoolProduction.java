@@ -24,7 +24,7 @@ public class ThreadPoolProduction {
         //注意这里使用的是callable 而不是runable。
         ArrayList<Callable<Integer>> tasks = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             tasks.add(new Callable<Integer>() {
                 @Override
                 public Integer call() throws Exception {

@@ -17,11 +17,12 @@ public class Test {
         executor = new ThreadPoolExecutor(5, 10, 200, TimeUnit.MILLISECONDS,
                 new ArrayBlockingQueue<Runnable>(5));
 
-        for(int i=0;i<15;i++){
+        for (int i = 0; i < 15; i++) {
             MyTask myTask = new MyTask(i);
             executor.execute(myTask);
-            System.out.println("线程池中线程数目："+executor.getPoolSize()+"，队列中等待执行的任务数目："+
-                    executor.getQueue().size()+"，已执行完的任务数目："+executor.getCompletedTaskCount());
+            System.out.println("线程池中线程数目：" + executor.getPoolSize() +
+                    "，队列中等待执行的任务数目：" + executor.getQueue().size() +
+                    "，已执行完的任务数目：" + executor.getCompletedTaskCount());
         }
         executor.shutdown();
 
@@ -29,20 +30,21 @@ public class Test {
         executor1 = new ThreadPoolExecutor(5, 10, 200, TimeUnit.MILLISECONDS,
                 new ArrayBlockingQueue<Runnable>(5));
 
-        for(int i=25;i<40;i++){
+        for (int i = 25; i < 40; i++) {
             int a = i % 2;
             PlayBasketball playBasketball = null;
             PlayPingPong playPingPong = null;
-            if (a==1){
+            if (a == 1) {
                 playBasketball = new PlayBasketball(i);
                 executor1.execute(playBasketball);
-            }else {
+            } else {
                 playPingPong = new PlayPingPong(i);
                 executor1.execute(playPingPong);
             }
 
-            System.out.println("线程池中线程数目："+executor1.getPoolSize()+"，队列中等待执行的任务数目："+
-                    executor1.getQueue().size()+"，已执行完的任务数目："+executor1.getCompletedTaskCount());
+            System.out.println("线程池中线程数目：" + executor1.getPoolSize() +
+                    "，队列中等待执行的任务数目：" + executor1.getQueue().size() +
+                    "，已执行完的任务数目：" + executor1.getCompletedTaskCount());
         }
         executor.shutdown();
         System.out.println("-----------------------------");
@@ -51,7 +53,7 @@ public class Test {
 
 }
 
-class PlayBasketball implements Runnable{
+class PlayBasketball implements Runnable {
     private int taskNum;
 
     public PlayBasketball(int taskNum) {
@@ -60,9 +62,9 @@ class PlayBasketball implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("正在执行task "+taskNum);
-        int i =0;
-        while (i < 10){
+        System.out.println("正在执行task " + taskNum);
+        int i = 0;
+        while (i < 10) {
             try {
                 Thread.sleep(500);
                 System.out.println("啪啪：" + taskNum);
@@ -73,7 +75,7 @@ class PlayBasketball implements Runnable{
     }
 }
 
-class PlayPingPong implements Runnable{
+class PlayPingPong implements Runnable {
     private int taskNum;
 
     public PlayPingPong(int taskNum) {
@@ -82,9 +84,9 @@ class PlayPingPong implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("正在执行task "+taskNum);
-        int i =0;
-        while (i < 10){
+        System.out.println("正在执行task " + taskNum);
+        int i = 0;
+        while (i < 10) {
             try {
                 Thread.sleep(500);
                 System.out.println("乒乓：" + taskNum);
@@ -104,21 +106,21 @@ class MyTask implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("正在执行task "+taskNum);
+        System.out.println("正在执行task " + taskNum);
         int i = 0;
-        while (true){
+        while (true) {
             try {
                 Thread.currentThread().sleep(500);
                 i++;
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if (i>10){
+            if (i > 10) {
                 break;
             }
-            System.out.println("task "+taskNum+"---");
+            System.out.println("task " + taskNum + "---");
         }
 
-        System.out.println("task "+taskNum+"执行完毕");
+        System.out.println("task " + taskNum + "执行完毕");
     }
 }

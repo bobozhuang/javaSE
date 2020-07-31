@@ -3,7 +3,7 @@ package main.java.com.bobozhuang.exam;
 import java.util.*;
 
 /**
- * description：
+ * description： 五张牌的炸金花
  * author Hubery
  * date 2020-05-16
  * version v0.0.1

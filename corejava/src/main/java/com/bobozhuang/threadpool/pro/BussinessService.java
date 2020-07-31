@@ -1,7 +1,7 @@
 package main.java.com.bobozhuang.threadpool.pro;
 
 /**
- * description：
+ * description： 业务service层
  * author Hubery
  * date 2020-04-02
  * version v0.0.1

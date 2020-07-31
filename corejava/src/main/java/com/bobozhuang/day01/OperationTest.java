@@ -36,5 +36,7 @@ public class OperationTest {
 
         System.out.println(16* 2 /3);   //16 10
 
+        System.out.println(12 % 3.14);
+        System.out.println(2 % 1);
     }
 }

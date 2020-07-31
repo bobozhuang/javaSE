@@ -22,6 +22,9 @@ public class DemoOne {
 
         add();
         addp();
+        for (int i = 0; i < 5; i++) {
+            add();
+        }
     }
 
     public static void add(){
