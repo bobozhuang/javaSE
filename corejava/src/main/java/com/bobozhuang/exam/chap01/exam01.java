@@ -1,4 +1,4 @@
-package main.java.com.bobozhuang.exam;
+package main.java.com.bobozhuang.exam.chap01;
 
 import java.util.Scanner;
 import java.util.concurrent.locks.Lock;
