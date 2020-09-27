@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.concurrent.*;
 
 /**
- * description：
+ * description：如何使用 threadpool的demo，实际开发不通过 executors创建线程池
  * author Hubery
  * date 2020-04-02
  * version v0.0.1
@@ -18,8 +18,14 @@ public class ThreadPoolProduction {
 
         BussinessService bussinessService = new BussinessServiceImpl();
 
-        //新建一个线程池，池中有两个线程，注意这里使用的是fiexd 注意和cached的区别
+        //1.新建一个线程池，池中有两个线程，注意这里使用的是fiexd 注意和cached的区别
         ExecutorService executorService = Executors.newFixedThreadPool(2);
+        //2.
+        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor();
+        //3.
+        ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
+        //4.
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
 
         //注意这里使用的是callable 而不是runable。
         ArrayList<Callable<Integer>> tasks = new ArrayList<>();

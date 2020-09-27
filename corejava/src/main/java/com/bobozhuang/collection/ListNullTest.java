@@ -1,6 +1,7 @@
 package main.java.com.bobozhuang.collection;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * description：
@@ -14,8 +15,13 @@ public class ListNullTest {
     public static void main(String[] args) {
         ArrayList a = null;
         ArrayList arr = new ArrayList();
-        System.out.println(arr);
+//        boolean empty = a.isEmpty();
+//        System.out.println(empty);
+//        System.out.println(arr);
 
+        HashMap<Object, Object> map = new HashMap<>();
+        Object ha = map.get("ha");
+        System.out.printf("" + ha);
     }
 
 }

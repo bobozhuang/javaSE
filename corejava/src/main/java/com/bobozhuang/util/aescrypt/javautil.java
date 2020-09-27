@@ -16,7 +16,8 @@ public class javautil {
 
         String decrypt = "IanoJpuRaw3buQQZfhdwnDLWqAFUJJ2qHbWZJ1IPyFA\\=";
 
-        String decrypt1 = AESCryptoUtil.decrypt(decrypt);
+        String dd = "ZUKj8GtklHoWHxh4dBmfrQ==";
+        String decrypt1 = AESCryptoUtil.decrypt(dd);
         System.out.println(decrypt1);
     }
 

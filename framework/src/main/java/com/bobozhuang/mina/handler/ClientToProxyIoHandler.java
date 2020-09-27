@@ -36,8 +36,8 @@ public class ClientToProxyIoHandler extends AbstractProxyIoHandler {
         connector.connect(remoteAddress).addListener(new IoFutureListener<ConnectFuture>() {
             public void operationComplete(ConnectFuture future) {
                 try {
-                    future.getSession().setAttribute(OTHER_IO_SESSION, session);
-                    session.setAttribute(OTHER_IO_SESSION, future.getSession());
+//                    future.getSession().setAttribute(OTHER_IO_SESSION, session);
+//                    session.setAttribute(OTHER_IO_SESSION, future.getSession());
                     IoSession session2 = future.getSession();
                     session2.resumeRead();
                     session2.resumeWrite();

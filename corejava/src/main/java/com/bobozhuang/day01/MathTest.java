@@ -9,14 +9,16 @@ package main.java.com.bobozhuang.day01;
  **/
 public class MathTest {
     private static final byte mask = 3;
+
     public static void main(String[] args) {
 
         long round = Math.round(-1.5);
-        System.out.println("round : " + round);
+        System.out.println("round1 : " + round);
+        System.out.println("round2 : " + Math.round(1.5));
 
-        int i=1;
-        for (int a=1;a <= 32;a ++ ){
-            i = i*2;
+        int i = 1;
+        for (int a = 1; a <= 32; a++) {
+            i = i * 2;
             System.out.println(a + ": " + i);
         }
 

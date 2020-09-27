@@ -1,0 +1,35 @@
+{
+	"id": "5ccf9817954ad500064ebce4",
+	"trigger_time" : "1600408244446",
+	"appName" : "ims-dev-freedom",
+	"appId" : "5f223b64e8e44500155f6535",
+	"project_url": "http://10.129.40.170/ebank/mob/fund/mspmk-web-fund-parent.git",
+	"project_gitlab_id" : "623",
+	"ref" : "SIT",
+	"status" : "passed",
+	"triggerer":"xingy",
+	"triggererId":"5f223b64e8e44500155f073e",
+	"commitId":"4acd04028f0b55ae216c50b35c111a2c8f685140",
+"jobs": [
+	{
+        	"id" : "5ccf9817954ad500064ebce4",
+            "stages": " maven-build ",
+            "priority": "1",
+            "status": "created",
+            "duration":"00:00:32",
+            "minio_url": "10.141.59.141:9000/minio/super-runner-test/2020-09-18/super-runner-mspmk-web-fund-parent-1594893564951.log",
+            "command": "check.py"
+        	},
+        	{
+		"id" : "5ccf9817954ad500064ebce4",
+            "stages": "check",
+            "priority": "2",
+            "status": "created",
+            "duration":"00:00:32",
+            "minio_url": "10.141.59.141:9000/minio/super-runner-test/2020-09-18/super-runner-mspmk-web-fund-parent-1594893564951.log",
+            "command": "check.py"
+        	}
+    	],
+    	"duration":"00:01:28",
+    	"finished_at":"1600408244446"
+}

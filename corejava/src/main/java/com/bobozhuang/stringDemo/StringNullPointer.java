@@ -1,6 +1,5 @@
 package main.java.com.bobozhuang.stringDemo;
 
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * description��
@@ -21,7 +20,6 @@ public class StringNullPointer {
         }
         System.out.println("���͹�����");
 
-        new ReentrantLock();
     }
 
 }

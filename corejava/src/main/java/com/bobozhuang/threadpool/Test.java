@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * description：https://juejin.im/entry/587601a7b123db4a2ed68485
+ * description：     https://juejin.im/entry/587601a7b123db4a2ed68485
  * author Hubery
  * date 2020-04-01
  * version v0.0.1
