@@ -1,7 +1,7 @@
 package main.java.com.bobozhuang.morethread.atomic;
 
 /**
- * description：
+ * description：     count++ 操作不是线程安全的
  * author Hubery
  * date 2020-05-08
  * version v0.0.1

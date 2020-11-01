@@ -16,7 +16,8 @@ import java.util.Optional;
 public class OptionalTest {
 
     public static void main(String[] args) {
-        Integer i = new Integer(2);
+        //Integer i = new Integer(2);
+        Integer i = null;
         Optional.ofNullable(i).ifPresent(t -> t = 3);
         System.out.println(i);
 

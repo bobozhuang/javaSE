@@ -17,7 +17,7 @@ import java.util.concurrent.locks.LockSupport;
 public class ParkTest1 {
 
     public static void main(String[] args) {
-
+        //test2();
         test3();
     }
 
@@ -58,17 +58,15 @@ public class ParkTest1 {
         });
 
         thread.start();
-        thread.interrupt();//设置中断标志
         try {
             System.out.println("sleep前");
-            Thread.sleep(1000l);    //sleep的同时会取消阻塞
+            thread.sleep(1000l);    //sleep不会取消阻塞，调用interrupt取消阻塞，所以不会抛异常
             System.out.println("sleep后");
         } catch (InterruptedException e) {
-            //sleep后唤醒          尽然不执行这里，说明sleep会唤醒阻塞的线程,并且正常sleep
+
             System.out.println("sleep后唤醒");
             e.printStackTrace();
         }
-
     }
 
     public static void test3() {
@@ -86,16 +84,17 @@ public class ParkTest1 {
         //复习一下interrupt
         //isInterrupted()只会返回中断标志，不会取消中断
         boolean interrupted1 = thread.isInterrupted();
-        System.out.println("调用了isInterrupted() " + interrupted1);
+        System.out.println("调用了1isInterrupted() " + interrupted1);
 
         boolean interrupted2 = thread.isInterrupted();
-        System.out.println("调用了isInterrupted() " + interrupted2);
-        //interrupted()这个会清除中断标志  但是和阻塞没有关系
+        System.out.println("调用了2isInterrupted() " + interrupted2);
+        //interrupted()这个在这种场景不会清除中断标志  和阻塞没有关系
         boolean interrupted3 = thread.interrupted();    //但是会返回false
 
         System.out.println("调用了interrupted() " + interrupted3);
-
-
+        // 返回true，主线程没有结束就
+        boolean interrupted4 = thread.isInterrupted();
+        System.out.println("调用了3isInterrupted() " + interrupted4);
     }
 
     /**

@@ -1,10 +1,8 @@
 package main.java.com.bobozhuang.util;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Map;
 
@@ -280,9 +278,10 @@ public class StringUtil {
 	}
 
 	public static void main(String[] args) {
-		BigDecimal b = new BigDecimal(100.01);
-		String s = BigDel2Str(b);
-		System.out.println(s);
+		addSeparator("/usr/local");
+//		BigDecimal b = new BigDecimal(100.01);
+//		String s = BigDel2Str(b);
+//		System.out.println(s);
 	}
 	
 	public static String byteToString(byte[] in) throws Exception {
@@ -388,4 +387,46 @@ public class StringUtil {
             return obj == null || "".equals(obj);
         }
     }
+
+	public static boolean isNotNullOrEmpty(String... param) {
+		for (String va : param) {
+			if (va == null || "".equals(va)) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+
+	// 日期时间转换
+	public static final String DATE_PATTERN = "yyyy-MM-dd";
+
+	public static final String DATE_PATTERN_F1 = "yyyy/MM/dd";
+
+	public static final String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
+
+	/* *
+	 * yyyy/MM/dd 日期转 yyyy-MM-dd
+	 * */
+	public static String dateParse2(String time) {
+		if (isNullOrEmpty(time)) {
+			return "";
+		}
+		SimpleDateFormat sdfx = new SimpleDateFormat(DATE_PATTERN);
+		SimpleDateFormat sdf = new SimpleDateFormat(DATE_PATTERN_F1);
+		try {
+			if (time.contains("/")) {
+				return sdfx.format(sdf.parse(time));
+			} else {
+				return time;
+			}
+		} catch (Exception e) {
+			return time;
+		}
+	}
+
+
+	public static String addSeparator(String str){
+		return str+ File.separator;
+	}
 }

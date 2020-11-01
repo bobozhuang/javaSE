@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * description：
+ * description：     读取证书列表
  * author Hubery
  * date 2020-03-28
  * version v0.0.1
