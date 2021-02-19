@@ -1,4 +1,4 @@
-package lock;
+package main.java.com.bobozhuang.threadlearn.lock;
 
 import org.junit.Test;
 

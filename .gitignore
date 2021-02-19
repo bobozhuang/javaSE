@@ -27,6 +27,8 @@ hs_err_pid*
 .project
 */.settings/
 .settings/
+*/out
+*/output
 
 # IDEA files
 */.idea/
