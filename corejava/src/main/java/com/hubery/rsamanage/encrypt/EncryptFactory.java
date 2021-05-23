@@ -1,7 +1,7 @@
 package main.java.com.hubery.rsamanage.encrypt;
 
-import com.csii.pe.encrypt.a;
-import com.csii.pe.encrypt.encryptFactroy;
+/*import com.csii.pe.encrypt.a;
+import com.csii.pe.encrypt.encryptFactroy;*/
 import sun.misc.BASE64Encoder;
 
 import java.io.ByteArrayOutputStream;
@@ -13,7 +13,8 @@ public class EncryptFactory extends encryptFactroy{
 	private synchronized RSAPublicKey getEncPubKey() {
 		String modulus = EncRSAPublicKeyModulus;
 		String pubExponent = "10001";
-		return a.buildRSAPublicKey(modulus, pubExponent);
+		//return a.buildRSAPublicKey(modulus, pubExponent);
+		return null;
 	}
 
 	public String getEncPubValue(String password){

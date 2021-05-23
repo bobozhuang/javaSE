@@ -1,4 +1,4 @@
-package com.bobozhuang;
+package main.java.com.bobozhuang;
 
 import com.bobozhuang.mina.handler.ClientToProxyIoHandler;
 import org.apache.mina.core.service.IoConnector;

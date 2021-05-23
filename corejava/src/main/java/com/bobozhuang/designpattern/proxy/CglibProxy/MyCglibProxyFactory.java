@@ -1,8 +1,8 @@
 package main.java.com.bobozhuang.designpattern.proxy.CglibProxy;
 
-import net.sf.cglib.proxy.Enhancer;
+/*import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
+import net.sf.cglib.proxy.MethodProxy;*/
 
 import java.lang.reflect.Method;
 
@@ -13,6 +13,9 @@ import java.lang.reflect.Method;
  * version v0.0.1
  * since v0.0.1
  **/
+public class MyCglibProxyFactory{}
+/*
+
 public class MyCglibProxyFactory implements MethodInterceptor {
 
 
@@ -34,3 +37,4 @@ public class MyCglibProxyFactory implements MethodInterceptor {
         return null;
     }
 }
+*/

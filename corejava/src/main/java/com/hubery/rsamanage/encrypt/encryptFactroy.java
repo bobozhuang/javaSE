@@ -1,6 +1,6 @@
 package main.java.com.hubery.rsamanage.encrypt;
 
-import com.csii.pe.encrypt.a;
+//import com.csii.pe.encrypt.a;
 
 import java.io.IOException;
 import java.security.interfaces.RSAPublicKey;
@@ -38,25 +38,27 @@ public class encryptFactroy {
 
     public void publicKeyBlob(String pubKeyBlob) throws IOException {
         int offset = pubKeyBlob.indexOf(58);
-        if (offset < 0) {
+        /*if (offset < 0) {
             this.AppRSAPublicKeyModulus = a.publickeyBlobToKeyModulus(pubKeyBlob);
         } else {
             this.AppRSAPublicKeyModulus = a.publickeyBlobToKeyModulus(pubKeyBlob.substring(0, offset));
             this.EncRSAPublicKeyModulus = a.publickeyBlobToKeyModulus(pubKeyBlob.substring(offset + 1));
-        }
+        }*/
 
     }
 
     private synchronized RSAPublicKey getAppPubKey() {
         String modulus = this.AppRSAPublicKeyModulus;
         String pubExponent = "10001";
-        return a.buildRSAPublicKey(modulus, pubExponent);
+        //return a.buildRSAPublicKey(modulus, pubExponent);
+        return null;
     }
 
     private synchronized RSAPublicKey getEncPubKey() {
         String modulus = this.EncRSAPublicKeyModulus;
         String pubExponent = "10001";
-        return a.buildRSAPublicKey(modulus, pubExponent);
+        //return a.buildRSAPublicKey(modulus, pubExponent);
+        return null;
     }
 
     public String getValue(String password) throws SecurityException {
