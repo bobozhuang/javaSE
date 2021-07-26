@@ -3,10 +3,10 @@ package main.java.com.bobozhuang.day03.ConcurrentModificationException;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * description£º
- *      Ã÷ÏÔ¿ÉÒÔ¿´³öÀ´CopyOnWriteArrayListµÄÖ´ĞĞĞ§ÂÊÃ»ÓĞArrayListµÄĞ§ÂÊ¸ß£¬Èç¹ûÃ÷È·ĞèÒª¶ÔÒ»¸öList½øĞĞĞŞ¸Ä£¬ÄÇÃ´CopyOnWriteArrayListÊÇÒ»¸öºÃµÄÑ¡Ôñ¡£
+ * descriptionï¼š
+ *      æ˜æ˜¾å¯ä»¥çœ‹å‡ºæ¥CopyOnWriteArrayListçš„æ‰§è¡Œæ•ˆç‡æ²¡æœ‰ArrayListçš„æ•ˆç‡é«˜ï¼Œå¦‚æœæ˜ç¡®éœ€è¦å¯¹ä¸€ä¸ªListè¿›è¡Œä¿®æ”¹ï¼Œé‚£ä¹ˆCopyOnWriteArrayListæ˜¯ä¸€ä¸ªå¥½çš„é€‰æ‹©ã€‚
  *
- *      Èç¹û¶ÔListÃ»ÓĞĞŞ¸ÄµÄĞèÇó£¬½¨ÒéÊ¹ÓÃArrayList¡£
+ *      å¦‚æœå¯¹Listæ²¡æœ‰ä¿®æ”¹çš„éœ€æ±‚ï¼Œå»ºè®®ä½¿ç”¨ArrayListã€‚
  *
  * author Hubery
  * date 2019-12-16
@@ -23,7 +23,7 @@ public class DemoTwo {
 
         for (String b : a) {
             System.out.println(b);
-            a.remove(0);            //CopyOnWriteArrayList¶ÔremoveµÄÊµÏÖ
+            a.remove(0);            //CopyOnWriteArrayListå¯¹removeçš„å®ç°
         }
 
         System.out.println(a.size());

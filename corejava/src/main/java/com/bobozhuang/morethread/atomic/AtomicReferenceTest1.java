@@ -1,7 +1,7 @@
 package main.java.com.bobozhuang.morethread.atomic;
 
 
-import lock.Student;
+import main.java.com.bobozhuang.morethread.lock.Student;
 
 import java.util.concurrent.atomic.AtomicReference;
 

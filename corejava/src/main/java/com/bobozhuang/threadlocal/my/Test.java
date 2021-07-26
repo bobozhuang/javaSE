@@ -16,7 +16,10 @@ public class Test {
         }
     };
 
+
+
     public static void main(String[] args) {
+        final int o;
         for (int i = 0; i < 100; i++) {
             new Thread(() -> {
                 System.out.println(v.get());

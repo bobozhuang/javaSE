@@ -21,6 +21,7 @@ public class ArrayBlockingQueueTest {
         executorService.submit(new ArrayBlockingQueueTest.Producer("producer1"));
         executorService.submit(new ArrayBlockingQueueTest.Producer("producer2"));
         executorService.submit(new ArrayBlockingQueueTest.Producer("producer3"));
+        executorService.execute(new Producer(""));
 //        executorService.submit(new ArrayBlockingQueueTest.Consumer("consumer1"));
 //        executorService.submit(new ArrayBlockingQueueTest.Consumer("consumer2"));
 //        executorService.submit(new ArrayBlockingQueueTest.Consumer("consumer3"));

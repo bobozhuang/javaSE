@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
- * description：
+ * description：     FutureTask创建线程
  * author Hubery
  * date 2020-03-22
  * version v0.0.1

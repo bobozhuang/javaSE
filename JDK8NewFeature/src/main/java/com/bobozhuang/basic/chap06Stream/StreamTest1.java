@@ -60,7 +60,7 @@ public class StreamTest1 {
 
         Stream.of(w,x,y)
                 .peek(e->{e.setName(e.getAge()+e.getName());}) //重新设置名字 变成 年龄+名字
-                .forEach(e->System.out.println(e.toString()));
+                .forEach(e->System.out.println(e.toString() + "" + w));
 
         //skip 跳过 元素
         Stream.of(1,2,3,4,5,6,7,8,9)

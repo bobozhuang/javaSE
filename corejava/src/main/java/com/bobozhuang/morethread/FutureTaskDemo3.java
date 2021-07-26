@@ -40,7 +40,7 @@ public class FutureTaskDemo3 {
             Thread.sleep(1000L);
             System.out.println("等待1秒");
         }
-        System.out.println(future.get());   //get() 方法可以获取到任务的执行结果
+        System.out.println("执行结果：" + future.get());   //get() 方法可以获取到任务的执行结果
         executor.shutdown();
     }
 

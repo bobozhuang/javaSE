@@ -1,7 +1,7 @@
 package main.java.com.bobozhuang.basetype;
 
 /**
- * description：
+ * description： 基本数据类型 字节数 对应最大最小值
  * author Hubery
  * date 2020-08-25
  * version v0.0.1

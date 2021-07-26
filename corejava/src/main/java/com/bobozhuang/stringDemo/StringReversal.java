@@ -63,9 +63,9 @@ public class StringReversal {
         char[] cba = new char[length];
 
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i <= length/2 ; i++) {
-            cba[length-1-i]= charStr[i];
-            cba[i] = charStr[length-1-i];
+        for (int i = 0; i <= length / 2; i++) {
+            cba[length - 1 - i] = charStr[i];
+            cba[i] = charStr[length - 1 - i];
         }
         System.out.println(new String(cba));
     }
@@ -99,18 +99,19 @@ public class StringReversal {
 
     /**
      * 5。使用栈
+     *
      * @param string
      * @return
      */
-    public static String strReverseWithStack(String string){
-        if(string==null||string.length()==0)return string;
+    public static String strReverseWithStack(String string) {
+        if (string == null || string.length() == 0) return string;
         Stack<Character> stringStack = new Stack<>();
-        char [] array = string.toCharArray();
-        for(Character c:array){
+        char[] array = string.toCharArray();
+        for (Character c : array) {
             stringStack.push(c);
         }
         int length = string.length();
-        for(int i= 0;i<length;i++){
+        for (int i = 0; i < length; i++) {
             array[i] = stringStack.pop();
         }
         return new String(array);
@@ -119,13 +120,13 @@ public class StringReversal {
     /**
      * 6。递归
      */
-    public static String strReverseWithRecursive(String string){
-        if(string==null||string.length()==0)return string;
+    public static String strReverseWithRecursive(String string) {
+        if (string == null || string.length() == 0) return string;
         int length = string.length();
-        if(length==1){
+        if (length == 1) {
             return string;
-        }else{
-            return  strReverseWithRecursive(string.substring(1))+string.charAt(0);
+        } else {
+            return strReverseWithRecursive(string.substring(1)) + string.charAt(0);
         }
     }
 
@@ -140,6 +141,7 @@ public class StringReversal {
 
     /**
      * 8.通过String类的charAt()的方法来获取字符串中的每一个字符，然后将其拼接为一个新的字符串。
+     *
      * @param s
      * @return
      */

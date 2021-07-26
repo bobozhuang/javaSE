@@ -32,7 +32,7 @@ public class ThreadLocalNPE {
                 threadLocalNPE.set();
                 System.out.println(threadLocalNPE.get());
             }
-        });
+        },"NPE-thread");
         thread1.start();
     }
 

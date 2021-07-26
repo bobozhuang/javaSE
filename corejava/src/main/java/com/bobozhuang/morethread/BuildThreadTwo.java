@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * description：
+ * description：     ￿自定义一个接口包装线程的创建启动
  * author Hubery
  * date 2020-03-22
  * version v0.0.1
@@ -22,7 +22,6 @@ class DemoActivity extends BaseActivity implements Runnable {
 
     @Override
     public void onCreate(Map savedInstanceState) {
-        super.onCreate(savedInstanceState);
         Thread t = new Thread(this);
         t.start();
     }
@@ -30,5 +29,6 @@ class DemoActivity extends BaseActivity implements Runnable {
     @Override
     public void run() {
 
+        System.out.println("starting ...");
     }
 }

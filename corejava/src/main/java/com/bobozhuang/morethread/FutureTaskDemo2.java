@@ -30,7 +30,10 @@ public class FutureTaskDemo2 {
         System.out.println(result);
     }
 
-
+    /**
+     * 线程池执行线程的内容，返回结果
+     * @return
+     */
     public static Tuple.Tuple3 commits(){
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         String commits = "back code init";

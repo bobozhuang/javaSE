@@ -1,7 +1,7 @@
 package main.java.com.bobozhuang.Exception.trycatchfinally;
 
 /**
- * description：
+ * description：     try\catch\finally 执行顺序
  * author Hubery
  * date 2020-05-29
  * version v0.0.1

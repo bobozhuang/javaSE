@@ -21,7 +21,7 @@ public class ReturnTest {
     public static void main(String[] args) {
         System.out.println(two(2));
         System.out.println();
-        System.out.println("----------three----------");
+        System.out.println("----------three----------+");
         System.out.println(three(2));
         System.out.println();
         System.out.println("----------four----------");
@@ -59,6 +59,11 @@ public class ReturnTest {
         }
     }
 
+    /**
+     * 当catch和finally都有return时，return的是finally的值。
+     * @param i
+     * @return
+     */
     public static int three(int i) {
         try {
             throw new Exception("异常");
@@ -73,7 +78,7 @@ public class ReturnTest {
     }
 
     /**
-     * 这里是值传递，在执行return前，保留了一个i的副本，值为0，然后再去执行finally，finall完后，到return的时候，
+     * 这里是值传递，在执行return前，保留了一个i的副本，值为0，然后再去执行finally，finally完后，到return的时候，
      *  返回的并不是当前的i，而是保留的那个副本，也就是2.所以返回结果是2.
      * @param i
      * @return
@@ -92,6 +97,11 @@ public class ReturnTest {
         }
     }
 
+    /**
+     * 都有 return 结果以finally这的代码逻辑为准
+     * @param i
+     * @return
+     */
     public static int five(int i) {
         try {
             throw new Exception("异常");
@@ -106,6 +116,11 @@ public class ReturnTest {
         }
     }
 
+    /**
+     * 引用传递的时候不管return的位置 finally 中的代码会生效
+     * @param s
+     * @return
+     */
     public static Student six(Student s) {
         try {
             throw new Exception("异常");

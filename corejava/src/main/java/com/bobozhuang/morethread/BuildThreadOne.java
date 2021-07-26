@@ -1,7 +1,8 @@
 package main.java.com.bobozhuang.morethread;
 
 /**
- * description：
+ * description：     继承Thread类实现一个线程类
+ *
  * author Hubery
  * date 2020-03-21
  * version v0.0.1
@@ -9,8 +10,12 @@ package main.java.com.bobozhuang.morethread;
  **/
 public class BuildThreadOne {
     public static void main(String[] args) {
-        DemoThread t = new DemoThread();
-        t.start();
+        for (int i = 0;i < 10 ;i++){
+            DemoThread t = new DemoThread();
+            t.start();
+            System.out.println(t.getName());
+        }
+
     }
 }
 
@@ -18,9 +23,7 @@ class DemoThread extends Thread {
 
     @Override
     public void run() {
-        //super.run();
-        // Perform time-consuming operation...
-        System.out.printf("ddddd中文");
+        System.out.println(Thread.currentThread().getName());
     }
 }
 

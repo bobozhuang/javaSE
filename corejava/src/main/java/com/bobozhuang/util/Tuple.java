@@ -45,26 +45,31 @@ public abstract class Tuple implements Serializable {
             return this.b;
         }
 
+        /**
+         * 比较两个对象：1、先比较hash值，2、判空，3、逐个比较每个属性
+         *  判空和hash一起也是可以的
+         * @param obj
+         * @return
+         */
         @Override
         public boolean equals(Object obj) {
-            if(hashCode()!=obj.hashCode()){
+            if (hashCode() != obj.hashCode()) {
                 return false;
             }
-            Tuple2 target=(Tuple2)obj;
-            if(target==null){
+            Tuple2 target = (Tuple2) obj;
+            if (target == null) {
                 return false;
             }
-            if(target.a.equals(a)&&target.b.equals(b)){
+            if (target.a.equals(a) && target.b.equals(b)) {
                 return true;
             }
             return false;
         }
 
 
-
         @Override
         public int hashCode() {
-            return String.valueOf(""+a.hashCode()+b.hashCode()).hashCode();
+            return String.valueOf("" + a.hashCode() + b.hashCode()).hashCode();
         }
     }
 
@@ -97,15 +102,15 @@ public abstract class Tuple implements Serializable {
 
         @Override
         public int hashCode() {
-            return String.valueOf(""+a.hashCode()+b.hashCode()+c.hashCode()).hashCode();
+            return String.valueOf("" + a.hashCode() + b.hashCode() + c.hashCode()).hashCode();
         }
 
         @Override
         public boolean equals(Object obj) {
-            Tuple3 target=(Tuple3)obj;
-            if(target==null)
+            Tuple3 target = (Tuple3) obj;
+            if (target == null)
                 return false;
-            if(target.a.equals(a)&&target.b.equals(b)&&target.c.equals(c)){
+            if (target.a.equals(a) && target.b.equals(b) && target.c.equals(c)) {
                 return true;
             }
             return false;
@@ -147,15 +152,15 @@ public abstract class Tuple implements Serializable {
 
         @Override
         public int hashCode() {
-            return String.valueOf(""+a.hashCode()+b.hashCode()+c.hashCode()+d.hashCode()).hashCode();
+            return String.valueOf("" + a.hashCode() + b.hashCode() + c.hashCode() + d.hashCode()).hashCode();
         }
 
         @Override
         public boolean equals(Object obj) {
-            Tuple4 target=(Tuple4)obj;
-            if(target==null)
+            Tuple4 target = (Tuple4) obj;
+            if (target == null)
                 return false;
-            if(target.a.equals(a)&&target.b.equals(b)&&target.c.equals(c)&&target.d.equals(d)){
+            if (target.a.equals(a) && target.b.equals(b) && target.c.equals(c) && target.d.equals(d)) {
                 return true;
             }
             return false;
@@ -203,15 +208,15 @@ public abstract class Tuple implements Serializable {
 
         @Override
         public int hashCode() {
-            return String.valueOf(""+a.hashCode()+b.hashCode()+c.hashCode()+d.hashCode()+e.hashCode()).hashCode();
+            return String.valueOf("" + a.hashCode() + b.hashCode() + c.hashCode() + d.hashCode() + e.hashCode()).hashCode();
         }
 
         @Override
         public boolean equals(Object obj) {
-            Tuple5 target=(Tuple5)obj;
-            if(target==null)
+            Tuple5 target = (Tuple5) obj;
+            if (target == null)
                 return false;
-            if(target.a.equals(a)&&target.b.equals(b)&&target.c.equals(c)&&target.d.equals(d)&&target.e.equals(e)){
+            if (target.a.equals(a) && target.b.equals(b) && target.c.equals(c) && target.d.equals(d) && target.e.equals(e)) {
                 return true;
             }
             return false;
