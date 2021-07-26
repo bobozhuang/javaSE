@@ -1,7 +1,7 @@
 package main.java.com.bobozhuang.classinit;
 
 /**
- * description：
+ * description：     类初始化
  * author Hubery
  * date 2020-05-29
  * version v0.0.1

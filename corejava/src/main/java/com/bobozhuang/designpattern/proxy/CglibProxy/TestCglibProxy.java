@@ -11,8 +11,8 @@ public class TestCglibProxy {
 
     public static void main(String[] args) {
         MyCglibProxyFactory cglib = new MyCglibProxyFactory();
-        BookService bookCglib =
-                (BookService) cglib.getInstance(new BookService().getClass());
+        BookService bookCglib = null;
+                //(BookService) cglib.getInstance(new BookService().getClass());
 
         bookCglib.addBook();
         System.out.println(bookCglib.getClass());
